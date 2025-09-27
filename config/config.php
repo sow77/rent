@@ -1,12 +1,12 @@
 <?php
-// Configuración de la base de datos
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'carrent_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
+// Configuración de la base de datos (permite variables de entorno)
+define('DB_HOST', getenv('DB_HOST') ?: 'localhost');
+define('DB_NAME', getenv('DB_NAME') ?: 'carrent_db');
+define('DB_USER', getenv('DB_USER') ?: 'root');
+define('DB_PASS', getenv('DB_PASS') ?: '');
 
 // Configuración de la aplicación
-define('APP_URL', 'http://localhost/dev-rent');
+define('APP_URL', getenv('APP_URL') ?: 'http://localhost/dev-rent');
 define('APP_NAME', 'Dev Rent');
 define('APP_DESCRIPTION', 'Alquiler de vehículos, barcos y transfers');
 
