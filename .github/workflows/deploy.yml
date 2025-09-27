@@ -1,0 +1,54 @@
+name: Deploy to Hosting via FTP
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Deploy via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Ruta remota donde publicar (ej: "/public_html/dev-rent/")
+          server-dir: ${{ secrets.FTP_DIR }}
+          # Protocolo: ftps (recomendado) o ftp
+          protocol: ${{ secrets.FTP_PROTOCOL }}
+          port: ${{ secrets.FTP_PORT }}
+          # No borrar todo en el servidor
+          dangerous-clean-slate: false
+          exclude: |
+            **/.git*/**
+            **/.git*
+            **/.github/**
+            node_modules/**
+            **/node_modules/**
+            tests/**
+            **/tests/**
+            **/*.md
+            **/*.MD
+            **/*.markdown
+            **/README*
+            **/.env*
+            scripts/**
+            maintenance/**
+            database/*.sql
+            **/*.bak
+            **/*.log
+            .ftp-deploy-sync-state.json
+
+
