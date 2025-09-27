@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://example.com/</loc>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://example.com/es/"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://example.com/de/"/>
+    </url>
+    <url>
+        <loc>https://example.com/vehicles</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://example.com/es/vehicles"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/vehicles"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/vehicles"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://example.com/de/vehicles"/>
+    </url>
+    <url>
+        <loc>https://example.com/boats</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://example.com/es/boats"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/boats"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/boats"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://example.com/de/boats"/>
+    </url>
+    <url>
+        <loc>https://example.com/transfers</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.9</priority>
+        <xhtml:link rel="alternate" hreflang="es" href="https://example.com/es/transfers"/>
+        <xhtml:link rel="alternate" hreflang="en" href="https://example.com/en/transfers"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://example.com/fr/transfers"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://example.com/de/transfers"/>
+    </url>
+</urlset>

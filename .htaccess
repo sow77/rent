@@ -1,0 +1,55 @@
+RewriteEngine On
+
+# Configurar el directorio base
+RewriteBase /dev-rent/
+
+# Si el archivo o directorio no existe, redirigir a index.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php [QSA,L]
+
+# Prevenir acceso directo a archivos PHP en directorios específicos
+RewriteRule ^(config|models|views|controllers)/.*\.php$ - [F,L]
+
+# Permitir acceso a archivos estáticos
+RewriteCond %{REQUEST_URI} \.(css|js|jpg|jpeg|png|gif|ico)$ [NC]
+RewriteRule ^ - [L]
+
+# Forzar HTTPS (descomentar en producción)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Prevenir listado de directorios
+Options -Indexes
+
+# Configuración de PHP
+php_value upload_max_filesize 10M
+php_value post_max_size 10M
+php_value max_execution_time 300
+php_value max_input_time 300
+
+# Permitir el acceso a archivos estáticos
+<FilesMatch "\.(css|js|jpg|jpeg|png|gif|ico|svg|woff|woff2|ttf|eot)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+
+# Configurar tipos MIME
+AddType text/css .css
+AddType application/javascript .js
+AddType image/jpeg .jpg .jpeg
+AddType image/png .png
+AddType image/gif .gif
+AddType image/x-icon .ico
+AddType image/svg+xml .svg
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+AddType application/x-font-ttf .ttf
+AddType application/vnd.ms-fontobject .eot
+
+# Permitir acceso directo a archivos y directorios existentes
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirigir todas las solicitudes a index.php
+RewriteRule ^(.*)$ index.php [QSA,L] 

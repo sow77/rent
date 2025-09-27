@@ -1,0 +1,28 @@
+﻿# SO
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Entorno
+.env
+.env.local
+.env.*.local
+
+# Logs/Temp
+*.log
+logs/
+tmp/
+cache/
+
+# Node
+node_modules/
+
+# Subidas (si se generan en runtime)
+public/uploads/
+
+# Miscelánea
+*.bak
+*.swp

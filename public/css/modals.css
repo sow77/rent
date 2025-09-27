@@ -1,0 +1,628 @@
+/* Estilos para los modales de detalles */
+.modal-content {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.modal-header {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.modal-header .btn-close {
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+}
+
+.modal-header .btn-close:hover {
+    opacity: 1;
+}
+
+.modal-body {
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.details-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.image-container {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    height: 100%;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    min-height: 400px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.image-container:hover img {
+    transform: scale(1.05);
+}
+
+.details-content {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.details-title {
+    font-size: 1.75rem;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.details-description {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 0;
+    font-size: 1rem;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 0;
+}
+
+.feature-item {
+    background: #f8f9fa;
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+    background: #e9ecef;
+    transform: translateX(5px);
+}
+
+.feature-item i {
+    color: #28a745;
+    margin-right: 0.75rem;
+    font-size: 1rem;
+}
+
+.specifications {
+    background: #f8f9fa;
+    padding: 1.25rem;
+    border-radius: 10px;
+    margin-bottom: 0;
+}
+
+.specifications h4 {
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.specifications ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.specifications li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.specifications li:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.specifications li:first-child {
+    padding-top: 0;
+}
+
+.price-card {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    padding: 1.25rem;
+    border-radius: 10px;
+    text-align: center;
+    margin-top: auto;
+}
+
+.price-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.price-card .price {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .details-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .image-container {
+        margin-bottom: 1.5rem;
+    }
+    
+    .image-container img {
+        min-height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .modal-body {
+        padding: 1.5rem;
+    }
+    
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .details-title {
+        font-size: 1.5rem;
+    }
+    
+    .specifications {
+        padding: 1rem;
+    }
+    
+    .price-card {
+        padding: 1rem;
+    }
+    
+    .price-card .price {
+        font-size: 1.5rem;
+    }
+}
+
+/* Animaciones */
+.modal.fade .modal-dialog {
+    transform: scale(0.8);
+    transition: transform 0.3s ease-out;
+}
+
+.modal.show .modal-dialog {
+    transform: scale(1);
+}
+
+/* Estilos para las tarjetas en la vista principal */
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: 100%;
+    background-color: #fff;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    color: #2c3e50;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    flex-grow: 1;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Estilos para las tarjetas de vehículos */
+.featured-section {
+    padding: 4rem 0;
+    background-color: #f8f9fa;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.section-title:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    margin: 1rem auto;
+    border-radius: 2px;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.card-body {
+    padding: 1.5rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.card-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.btn-primary {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    border: none;
+    padding: 0.5rem 1.5rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(45deg, #2980b9, #3498db);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+}
+
+/* Estilos para los modales de autenticación */
+#loginModal .modal-header,
+#registerModal .modal-header {
+    background: linear-gradient(45deg, #3498db, #2980b9);
+    color: white;
+    border: none;
+    padding: 1.5rem;
+}
+
+#loginModal .modal-content,
+#registerModal .modal-content {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#loginModal .modal-body,
+#registerModal .modal-body {
+    padding: 2rem;
+}
+
+#loginModal .form-label,
+#registerModal .form-label {
+    color: #2c3e50;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+#loginModal .form-control,
+#registerModal .form-control {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#loginModal .form-control:focus,
+#registerModal .form-control:focus {
+    border-color: #3498db;
+    box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.25);
+}
+
+#loginModal .input-group,
+#registerModal .input-group {
+    position: relative;
+}
+
+#loginModal .input-group .btn,
+#registerModal .input-group .btn {
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+#loginModal .input-group .btn:hover,
+#registerModal .input-group .btn:hover {
+    background-color: #e9ecef;
+    color: #495057;
+}
+
+#loginModal .btn-primary,
+#registerModal .btn-success {
+    padding: 0.75rem 1.5rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+}
+
+#loginModal .btn-primary:hover,
+#registerModal .btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#loginModal .modal-footer,
+#registerModal .modal-footer {
+    border-top: none;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+}
+
+#loginModal .modal-footer a,
+#registerModal .modal-footer a {
+    color: #3498db;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+#loginModal .modal-footer a:hover,
+#registerModal .modal-footer a:hover {
+    color: #2980b9;
+    text-decoration: underline;
+}
+
+#loginModal .alert,
+#registerModal .alert {
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    padding: 1rem;
+}
+
+#loginModal .alert-danger,
+#registerModal .alert-danger {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    color: #721c24;
+}
+
+#loginModal .alert-success,
+#registerModal .alert-success {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+    color: #155724;
+}
+
+/* Animaciones para los modales de autenticación */
+#loginModal.fade .modal-dialog,
+#registerModal.fade .modal-dialog {
+    transform: scale(0.8);
+    transition: transform 0.3s ease-out;
+}
+
+#loginModal.show .modal-dialog,
+#registerModal.show .modal-dialog {
+    transform: scale(1);
+}
+
+/* Responsive para los modales de autenticación */
+@media (max-width: 576px) {
+    #loginModal .modal-body,
+    #registerModal .modal-body {
+        padding: 1.5rem;
+    }
+    
+    #loginModal .btn-primary,
+    #registerModal .btn-success {
+        padding: 0.5rem 1rem;
+    }
+}
+
+/* Estilos compactos para todos los modales de detalles */
+#vehiclesDetailsModal .modal-dialog,
+#boatsDetailsModal .modal-dialog,
+#transfersDetailsModal .modal-dialog {
+  max-width: 800px;
+  width: 98vw;
+}
+
+#vehiclesDetailsModal .modal-content,
+#boatsDetailsModal .modal-content,
+#transfersDetailsModal .modal-content {
+  border-radius: 18px;
+  padding: 0;
+  max-height: 90vh;
+  overflow: visible;
+}
+
+#vehiclesDetailsModal .modal-header,
+#boatsDetailsModal .modal-header,
+#transfersDetailsModal .modal-header {
+  padding: 1rem 1.5rem;
+  min-height: 56px;
+}
+
+.details-image {
+  max-width: 160px;
+  max-height: 100px;
+  margin-right: 1rem;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.details-content {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.2rem;
+}
+
+.details-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.details-cards-row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+
+.details-card {
+  flex: 1;
+  min-width: 0;
+  padding: 0.8rem 0.6rem;
+  font-size: 0.95rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  text-align: center;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.details-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.details-price {
+  font-size: 1.4rem;
+  margin: 1rem 0 0.8rem 0;
+  padding: 0.8rem 1rem;
+  font-weight: bold;
+  color: #2c3e50;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: white;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(52, 152, 219, 0.3);
+}
+
+.features-section {
+  margin-bottom: 1rem;
+}
+
+.features-section h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.feature-item {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 0.6rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin: 0.3rem;
+  border: 1px solid #dee2e6;
+  transition: all 0.3s ease;
+}
+
+.feature-item:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+@media (max-width: 900px) {
+  #vehiclesDetailsModal .modal-dialog,
+  #boatsDetailsModal .modal-dialog,
+  #transfersDetailsModal .modal-dialog {
+    max-width: 99vw;
+  }
+  .details-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .details-cards-row {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+} 
