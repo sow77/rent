@@ -24,8 +24,8 @@ npm run db:setup
 ## Credenciales de Prueba
 
 ### Administrador
-- Email: admin@carrent.com
-- Contraseña: admin123
+- Email: sow.alpha.m@gmail.com
+- Contraseña: Sw.12345
 
 ## Pruebas del Sistema
 
