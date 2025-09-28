@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Disallow: /config/
+Disallow: /includes/
+
+# Sitemap
+Sitemap: https://example.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10
+
+# Host
+Host: https://example.com
